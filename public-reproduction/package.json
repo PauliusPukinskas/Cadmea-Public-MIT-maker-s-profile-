@@ -1,0 +1,11 @@
+{
+  "name": "cadmea-public-explanatory-reproduction",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test illustrative-model.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
