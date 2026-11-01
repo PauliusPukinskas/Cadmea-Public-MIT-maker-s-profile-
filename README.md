@@ -10,6 +10,12 @@
 
 ---
 
+## Evidence available to reviewers
+
+**[Read and run the public mathematical reproduction](public-reproduction/README.md)** · **[Check genuine demo and media availability](docs/DEMO_AND_MEDIA_STATUS.md)**
+
+The reproduction is independently authored from the published criteria and synthetic examples: **it is not original CADMEA team code**. It allows the calculation assumptions to be inspected without pretending that the team has approved public release of its source or media. For the real product, use [the project website](https://cadmeamap.com/); its full reviewer-access behavior remains unverified here.
+
 ## The problem I wanted to solve
 
 A city can know **where sports facilities are** without knowing where additional investment would be most defensible. Demand is uneven, citizen feedback is incomplete, and decisions about new sports facilities compete for limited resources. A map is useful, but showing locations alone does not justify a spending decision.
