@@ -18,6 +18,25 @@ I led CADMEA as CEO **and contributed directly to backend and decision-algorithm
 
 The original source archive contains `artifacts/api-server/src/lib/decision-model.ts` and `resident-evidence.ts`, among other backend modules. I do **not** claim sole line-by-line authorship or label the separately written public reproduction as original application code.
 
+## The working application: genuine public screenshots
+
+These are **real screenshots captured on November 2, 2026 from [the publicly accessible CADMEA application](https://cadmeamap.com/)**, not AI-generated mockups or pictures of a planned future product. They show the collaborative interface. My primary technical contribution was **backend and decision algorithms**, not sole authorship of the frontend.
+
+[![Real CADMEA public municipal infrastructure overview](assets/live-screenshots/01-overview.png)](https://cadmeamap.com/)
+
+*01 · Public infrastructure overview. The map and cards are team-built presentation; the backend data-to-decision reasoning and source handling are the technical work described [here](docs/MY_BACKEND_AND_ALGORITHM_WORK.md).*
+
+| Public demand radar | Planned project progress |
+| :---: | :---: |
+| [![Actual CADMEA demand radar UI](assets/live-screenshots/02-demand.png)](https://cadmeamap.com/paklausa) | [![Actual CADMEA project map UI](assets/live-screenshots/03-projects.png)](https://cadmeamap.com/projektai) |
+| Evidence to inform demand comparisons, **not proof of verified unmet demand** | A real planning view, **not an approved municipal investment plan** |
+
+[![Actual CADMEA OpenStreetMap mini infrastructure public view](assets/live-screenshots/04-mini-infrastructure.png)](https://cadmeamap.com/mini-infrastruktura)
+
+*04 · Public OpenStreetMap mini infrastructure. The archived 2,036-object example was recycling and waste infrastructure, **not 2,036 sports facilities**. The screenshot is from the currently live public page, not the May hackathon build.*
+
+The [capture metadata](assets/live-screenshots/CAPTURE_INFO.json) lists exact URLs, times and viewport. The screenshots do **not** establish that a municipality adopted the system, that a model forecast is accurate, or that the current public UI is identical to the original hackathon prototype. Original team video/stills remain unpublished pending rights review.
+
 ## Evidence available to reviewers
 
 **[Read and run the public mathematical reproduction](public-reproduction/README.md)** · **[Check genuine demo and media availability](docs/DEMO_AND_MEDIA_STATUS.md)**
@@ -81,7 +100,7 @@ This is a **retrospective** timeline based on prior artifacts and project histor
 
 The original demo recording is a 23.8-second capture of the working UI, including the Vilnius map, demand views and OSM mini-infrastructure layer. [Open the product website](https://cadmeamap.com/).
 
-The recording and original screenshots are intentionally distributed separately from this public documentation until the team's publication rights for media are confirmed. **No source code, authentication details or private partner datasets are published here.**
+Four **new, public-page screenshots** are published above, captured directly from the anonymous live site. The original archival recording and earlier team screenshots remain separate pending publication-rights review. **No original team application source, authentication details or private partner datasets are published here.**
 
 For context, the Oct 2026 OpenStreetMap mini-infrastructure snapshot contained **2,036 objects** comprising recycling sites, waste baskets and waste-disposal points. These **are not 2,036 sports facilities**.
 
