@@ -1,0 +1,32 @@
+name: Capture anonymous public CADMEA product views
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/capture-public-site.yml
+permissions:
+  contents: write
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser for screenshots
+        run: |
+          npm install --no-audit --no-fund --no-save --prefix tools/capture playwright
+          ./tools/capture/node_modules/.bin/playwright install --with-deps chromium
+      - name: Capture public non-authenticated CADMEA pages
+        run: node tools/capture/capture.mjs
+      - name: Commit verified screenshots if capture succeeded
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add assets/live-screenshots
+          if ! git diff --cached --quiet; then
+            git commit -m "media: add dated screenshots of CADMEA public product pages"
+            git push
+          fi
