@@ -28,5 +28,7 @@ jobs:
           git add assets/live-screenshots
           if ! git diff --cached --quiet; then
             git commit -m "media: add dated screenshots of CADMEA public product pages"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
