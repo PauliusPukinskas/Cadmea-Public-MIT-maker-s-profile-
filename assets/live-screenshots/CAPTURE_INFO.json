@@ -1,0 +1,46 @@
+{
+  "attribution": "CADMEA collaborative software project",
+  "caution": "Current live public pages; not historical source/build screenshots. App UI is team-built, frontend credited to the team frontend developer. Planning data may be illustrative/proxy and is not official municipal decisions.",
+  "pages": [
+    {
+      "route": "/",
+      "filename": "01-overview.png",
+      "label": "Public infrastructure overview",
+      "url": "https://cadmeamap.com/",
+      "capturedAt": "2026-11-02T00:13:09.184Z",
+      "type": "screenshot of publicly accessible page",
+      "viewport": "1440x900",
+      "status": "rendered"
+    },
+    {
+      "route": "/paklausa",
+      "filename": "02-demand.png",
+      "label": "Public demand radar",
+      "url": "https://cadmeamap.com/paklausa",
+      "capturedAt": "2026-11-02T00:13:15.698Z",
+      "type": "screenshot of publicly accessible page",
+      "viewport": "1440x900",
+      "status": "rendered"
+    },
+    {
+      "route": "/projektai",
+      "filename": "03-projects.png",
+      "label": "Public project progress",
+      "url": "https://cadmeamap.com/projektai",
+      "capturedAt": "2026-11-02T00:13:22.232Z",
+      "type": "screenshot of publicly accessible page",
+      "viewport": "1440x900",
+      "status": "rendered"
+    },
+    {
+      "route": "/mini-infrastruktura",
+      "filename": "04-mini-infrastructure.png",
+      "label": "Public OpenStreetMap mini infrastructure",
+      "url": "https://cadmeamap.com/mini-infrastruktura",
+      "capturedAt": "2026-11-02T00:13:28.815Z",
+      "type": "screenshot of publicly accessible page",
+      "viewport": "1440x900",
+      "status": "rendered"
+    }
+  ]
+}
