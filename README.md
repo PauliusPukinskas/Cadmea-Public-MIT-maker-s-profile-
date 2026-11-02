@@ -10,6 +10,14 @@
 
 ---
 
+## My technical role: backend and algorithms
+
+**[See exactly what I worked on, mapped to archived source modules](docs/MY_BACKEND_AND_ALGORITHM_WORK.md).**
+
+I led CADMEA as CEO **and contributed directly to backend and decision-algorithm work**: converting geographic and community signals into reviewable candidate screening, handling missing values, checking source quality, and exploring how policy weights change rankings. I worked alongside another backend contributor. The frontend, QA and marketing roles belong to other team members and are credited explicitly.
+
+The original source archive contains `artifacts/api-server/src/lib/decision-model.ts` and `resident-evidence.ts`, among other backend modules. I do **not** claim sole line-by-line authorship or label the separately written public reproduction as original application code.
+
 ## Evidence available to reviewers
 
 **[Read and run the public mathematical reproduction](public-reproduction/README.md)** · **[Check genuine demo and media availability](docs/DEMO_AND_MEDIA_STATUS.md)**
