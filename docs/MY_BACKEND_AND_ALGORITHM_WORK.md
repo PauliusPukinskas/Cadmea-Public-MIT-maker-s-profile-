@@ -4,6 +4,8 @@
 
 CADMEA was built collaboratively during and after Make It Real in Vilnius (May 2026). I led product direction and worked hands-on in the backend and algorithm layer. Other teammates contributed backend code, the frontend, QA and communication. **This is a role and responsibility account, not a claim that I alone authored every file listed below.**
 
+The [current product walkthrough](PRODUCT_WALKTHROUGH.md) connects these responsibilities to six direct captures of the live public application. The UI and maps show the collaborative product; the tables below identify my backend and algorithm work separately.
+
 ## The engineering work, not just the pitch
 
 | Problem I worked on | What I contributed | Verifiable technical artifact in our archived team source |

@@ -1,115 +1,71 @@
 # CADMEA
 
-### Turning a map of facilities into a question about public investment.
+**Help a city compare where to build, repair or investigate sports infrastructure.**
 
-**Team-built municipal infrastructure intelligence prototype | Make It Real, Vilnius, May 2026**
+CADMEA brings facility locations, community signals and explicit decision criteria into a municipal planning workspace. Our team started it at Make It Real in Vilnius in May 2026, winning the Active Vilnius challenge and receiving recognition in the FIRSTPICK investor category.
 
-**My role: CEO, team leadership, backend development and decision algorithm work.**
+**Paulius Pukinskas · Team lead / CEO · Backend and algorithms lead**
 
-[Explore CADMEA](https://cadmeamap.com/) · [Development history](docs/BUILD_HISTORY.md) · [Engineering case study](docs/ENGINEERING.md) · [Contribution & evidence notes](docs/CONTRIBUTIONS_AND_EVIDENCE.md)
+[Explore the application](https://cadmeamap.com/) · [My technical contributions](docs/MY_BACKEND_AND_ALGORITHM_WORK.md) · [Engineering case study](docs/ENGINEERING.md) · [Team credits](docs/CONTRIBUTIONS_AND_EVIDENCE.md)
 
----
+[![CADMEA public English infrastructure overview with managed, planned and demand map layers](assets/live-screenshots/2026-11-07/cadmea-overview.jpg)](https://cadmeamap.com/)
 
-## My technical role: backend and algorithms
+*The working public application, captured in English on November 7, 2026. The interface was built by the team; my technical focus was the backend and decision algorithms.*
 
-**[See exactly what I worked on, mapped to archived source modules](docs/MY_BACKEND_AND_ALGORITHM_WORK.md).**
+## My technical contribution
 
-I led CADMEA as CEO **and contributed directly to backend and decision-algorithm work**: converting geographic and community signals into reviewable candidate screening, handling missing values, checking source quality, and exploring how policy weights change rankings. I worked alongside another backend contributor. The frontend, QA and marketing roles belong to other team members and are credited explicitly.
+I led product direction and worked hands on in the backend with another backend contributor. My focus was turning incomplete geographic and community information into a decision process a person could inspect.
 
-The original source archive contains `artifacts/api-server/src/lib/decision-model.ts` and `resident-evidence.ts`, among other backend modules. I do **not** claim sole line-by-line authorship or label the separately written public reproduction as original application code.
+| Problem | My contribution | Technical evidence |
+| :--- | :--- | :--- |
+| A map alone cannot justify an investment | Backend decision and ranking logic with six configurable criteria | [Decision model walkthrough](docs/MY_BACKEND_AND_ALGORITHM_WORK.md) |
+| Missing observations can make a score misleading | Distinguish unknown from zero; report weighted coverage and possible score bounds | [Worked calculation](docs/ENGINEERING.md#the-decision-calculation) |
+| Repeated or unrelated requests can inflate demand | District and sport matching, terminology normalization and duplicate signal handling | [Resident evidence logic](docs/MY_BACKEND_AND_ALGORITHM_WORK.md#concrete-example-2-community-signals-must-relate-to-the-proposed-facility) |
+| Policy weights can change the shortlist | Compare rankings across 13 deterministic weight scenarios | [Sensitivity analysis](docs/ENGINEERING.md#rankings-that-can-change-with-policy) |
+| Geographic services can fail | Backend integration and data workflows supporting source retrieval and snapshot fallback | [Architecture and source references](docs/MY_BACKEND_AND_ALGORITHM_WORK.md) |
 
-## The working application: genuine public screenshots
+[Full responsibilities and archived source paths](docs/MY_BACKEND_AND_ALGORITHM_WORK.md) · [Team roles](docs/CONTRIBUTIONS_AND_EVIDENCE.md)
 
-These are **real screenshots captured on November 2, 2026 from [the publicly accessible CADMEA application](https://cadmeamap.com/)**, not AI-generated mockups or pictures of a planned future product. They show the collaborative interface. My primary technical contribution was **backend and decision algorithms**, not sole authorship of the frontend.
+## The product in use
 
-[![Real CADMEA public municipal infrastructure overview](assets/live-screenshots/01-overview.png)](https://cadmeamap.com/)
-
-*01 · Public infrastructure overview. The map and cards are team-built presentation; the backend data-to-decision reasoning and source handling are the technical work described [here](docs/MY_BACKEND_AND_ALGORITHM_WORK.md).*
-
-| Public demand radar | Planned project progress |
+| Facility portfolio | Demand radar |
 | :---: | :---: |
-| [![Actual CADMEA demand radar UI](assets/live-screenshots/02-demand.png)](https://cadmeamap.com/paklausa) | [![Actual CADMEA project map UI](assets/live-screenshots/03-projects.png)](https://cadmeamap.com/projektai) |
-| Evidence to inform demand comparisons, **not proof of verified unmet demand** | A real planning view, **not an approved municipal investment plan** |
+| [![CADMEA English facility portfolio and breakdown by type](assets/live-screenshots/2026-11-07/cadmea-facilities.jpg)](https://cadmeamap.com/objektai) | [![CADMEA English demand, trend and shortage indices](assets/live-screenshots/2026-11-07/cadmea-demand.jpg)](https://cadmeamap.com/paklausa) |
+| Managed and planned facilities retain their type and status. | Planning indices remain distinct from verified demand measurements. |
 
-[![Actual CADMEA OpenStreetMap mini infrastructure public view](assets/live-screenshots/04-mini-infrastructure.png)](https://cadmeamap.com/mini-infrastruktura)
+### Inspect a geographic data layer
 
-*04 · Public OpenStreetMap mini infrastructure. The archived 2,036-object example was recycling and waste infrastructure, **not 2,036 sports facilities**. The screenshot is from the currently live public page, not the May hackathon build.*
+[![CADMEA OSM category filter showing 141 clothing collection points from a 2036 object snapshot](assets/live-screenshots/2026-11-07/cadmea-category-filter.jpg)](https://cadmeamap.com/mini-infrastruktura)
 
-The [capture metadata](assets/live-screenshots/CAPTURE_INFO.json) lists exact URLs, times and viewport. The screenshots do **not** establish that a municipality adopted the system, that a model forecast is accurate, or that the current public UI is identical to the original hackathon prototype. Original team video/stills remain unpublished pending rights review.
+The captured application uses an OSM data copy with 2,036 waste, recycling, litter bin and clothing records. Selecting Clothing leaves 141 records; the visible map count also depends on its bounds. This is an example of geographic ingestion and filtering, separate from the sports facility inventory.
 
-## Evidence available to reviewers
+[Open the six image walkthrough, including planned projects and the full OSM layer](docs/PRODUCT_WALKTHROUGH.md).
 
-**[Read and run the public mathematical reproduction](public-reproduction/README.md)** · **[Check genuine demo and media availability](docs/DEMO_AND_MEDIA_STATUS.md)**
+## A calculation worth checking
 
-The reproduction is independently authored from the published criteria and synthetic examples: **it is not original CADMEA team code**. It allows the calculation assumptions to be inspected without pretending that the team has approved public release of its source or media. For the real product, use [the project website](https://cadmeamap.com/); its full reviewer-access behavior remains unverified here.
+If demand pressure is 80/100 and supplies the only available input, weighted at 30%, the model reports:
 
-## The problem I wanted to solve
+| Quantity | Value |
+| :--- | ---: |
+| Conditional index over known inputs | 80 / 100 |
+| Weighted data coverage | 30% |
+| Possible complete weighted score | 24 to 94 |
 
-A city can know **where sports facilities are** without knowing where additional investment would be most defensible. Demand is uneven, citizen feedback is incomplete, and decisions about new sports facilities compete for limited resources. A map is useful, but showing locations alone does not justify a spending decision.
+The wide bound exposes the missing 70% of policy weight. It is a deterministic bound under the assumed indicator scale. The six default weights are illustrative pilot choices, and the 13 scenarios test local weight sensitivity.
 
-We built CADMEA as a way to bring **geographic infrastructure data, community signals, and explicit decision criteria** into one reviewable municipal workflow. It began as a team project for the international **Make It Real** hackathon in Vilnius, where our team won the **Active Vilnius challenge** and received recognition in the **FIRSTPICK investor category**.
+The [engineering notes](docs/ENGINEERING.md) explain the original archived model. A separate [public mathematical reproduction](public-reproduction/README.md) lets you run synthetic examples with Node 18 or newer:
 
-Our larger goal is to help decision makers ask: *Which area needs attention, what supports that conclusion, and what evidence is still missing?*
+```bash
+cd public-reproduction
+npm test
+```
 
-![CADMEA decision system overview](assets/01-system-map.svg)
+The reproduction was written for this showcase. Original team application source remains private. [Current verification record](docs/REVIEW_CHECKS.md) keeps the public tests separate from the earlier archived source test run.
 
-## What I worked on
+## Team and development
 
-I led the project as CEO and contributed substantially to the backend and algorithms, working alongside teammates who handled additional backend work, frontend, quality assurance and marketing.
+I contributed backend and algorithm work alongside Motiejus Augustas Barauskas. Karolis Beliavskij developed the frontend, Martynas Toločka handled QA and operations, and Rokas Vengraitis worked on marketing and communication. Development also used AI coding tools. [Contribution record](docs/CONTRIBUTIONS_AND_EVIDENCE.md).
 
-My technical focus included helping turn geographic and community information into structured, reviewable decision inputs; implementing and improving backend logic; and developing a scoring workflow where uncertainty is visible rather than hidden. I also worked on product strategy and the proposed municipality pilot.
+The project grew from the May hackathon prototype into a broader infrastructure workspace. Later work addressed provenance, missing data, resident evidence and source reliability. Municipal pilot discussions remain development work; the prototype has no claim of approved investment policy or validated forecast accuracy.
 
-**I was not the sole developer.** This is a collaborative project; the specific team responsibilities are documented [here](docs/CONTRIBUTIONS_AND_EVIDENCE.md). AI-assisted development was used as a tool, and I am not claiming to have trained a proprietary machine-learning model.
-
-## What actually works
-
-| Evidence | What it demonstrates |
-| :--- | :--- |
-| **A multi-page geographic application** | Sports facilities, planned projects, geographic layers, demand indicators, and municipal decision views |
-| **Six-criterion decision model** | Explicit configurable policies rather than an unexplained “AI score” |
-| **Missing-data safeguards** | Unknown access, cost or occupancy inputs remain unknown instead of being silently filled in |
-| **13 sensitivity scenarios** | How relative ranks change when each criterion weight is varied |
-| **Source and review labels** | Distinguishes documented, community and proxy inputs, and always requires human review |
-| **12/12 tests passing** | Decision-model unit tests rerun from the recovered project archive on November 2, 2026 |
-
-**Not claimed:** validated travel-time accessibility calculations, real-world forecast accuracy, official municipal approval of model weights, or deployed city budget automation.
-
-## A closer look at the algorithm
-
-![Six configured criteria](assets/02-criteria.svg)
-
-Six adjustable weights are used for **demand pressure (30%)**, **access gap (25%)**, **facility pressure (15%)**, **resident input (10%)**, **asset condition (10%)** and **value for money (10%)**. These are *illustrative pilot defaults*, not independently optimized or officially approved policy.
-
-![Incomplete evidence example](assets/03-unknowns.svg)
-
-**The uncomfortable example:** a candidate with only 30% of the weighted inputs available can have a conditional index of 80/100, yet its mathematically possible full weighted range is **24–94**. That result is not a prediction. It shows why a visually appealing number can be misleading without data-coverage context. [See the actual test and interpretation](docs/ENGINEERING.md).
-
-## How the product evolved
-
-1. **May 2026:** Built and demonstrated the original collaborative sports infrastructure prototype during Make It Real.
-2. **Following the hackathon:** Developed the broader municipal infrastructure workspace and explored pilot conversations with Vilnius stakeholders.
-3. **October 2026:** Reworked the decision logic to show provenance, preserve missing data, prevent inappropriate community-signal duplication and test weight sensitivity.
-4. **October 2026:** Added/strengthened map-data ingestion resilience, a snapshot-based fallback and a restricted one-click viewer demo for review.
-5. **November 2026:** Prepared a source-grounded portfolio with an independently rerun 12-test decision-model check and archived demo footage.
-
-This is a **retrospective** timeline based on prior artifacts and project history, **not a claim that this new public repository contains all historical commits**.
-
-[Read the full build history](docs/BUILD_HISTORY.md).
-
-## Genuine product evidence
-
-The original demo recording is a 23.8-second capture of the working UI, including the Vilnius map, demand views and OSM mini-infrastructure layer. [Open the product website](https://cadmeamap.com/).
-
-Four **new, public-page screenshots** are published above, captured directly from the anonymous live site. The original archival recording and earlier team screenshots remain separate pending publication-rights review. **No original team application source, authentication details or private partner datasets are published here.**
-
-For context, the Oct 2026 OpenStreetMap mini-infrastructure snapshot contained **2,036 objects** comprising recycling sites, waste baskets and waste-disposal points. These **are not 2,036 sports facilities**.
-
-## What this project taught me
-
-**Scoring is easy. Defensible scoring is hard.** Early iterations could fill gaps with assumptions and produce clean rankings. We replaced those shortcuts with explicit missing values, source provenance, transparent policy weights and sensitivity analyses. Instead of presenting every candidate as a confident answer, the system can tell a municipal reviewer what is still needed before a decision.
-
-A useful engineering system should be able to say *“we do not know yet.”*
-
----
-
-*CADMEA was built by a team. This public portfolio documents product history, my contributions, and independently checkable technical behavior without releasing jointly owned source. The model remains a pilot screening tool, not an approved municipal investment policy.*
+[Build history](docs/BUILD_HISTORY.md) · [System map](assets/01-system-map.svg) · [Media provenance](docs/DEMO_AND_MEDIA_STATUS.md)

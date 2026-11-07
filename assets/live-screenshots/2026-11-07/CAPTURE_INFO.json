@@ -1,0 +1,91 @@
+{
+  "capturedOn": "2026-11-07",
+  "context": "Current public product views, separate from historical build artifacts. Screenshots demonstrate UI behavior and do not establish empirical forecast accuracy.",
+  "attribution": "CADMEA team; Paulius Pukinskas led backend and algorithms; frontend credited separately in team contributions",
+  "captures": [
+    {
+      "file": "cadmea-overview.jpg",
+      "url": "https://cadmeamap.com/",
+      "capturedAt": "2026-11-07T15:16:14.451Z",
+      "view": "English overview",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "acab792f8bd5497a70dbe365fef644abf6f069a1709468611c514f52282ade5f",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    },
+    {
+      "file": "cadmea-facilities.jpg",
+      "url": "https://cadmeamap.com/objektai",
+      "capturedAt": "2026-11-07T15:16:51.823Z",
+      "view": "English facility portfolio",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "adac34a6484c3fb937e93d890bfabe28455c4ee9858543eaf90d8f6fef43acbf",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    },
+    {
+      "file": "cadmea-demand.jpg",
+      "url": "https://cadmeamap.com/paklausa",
+      "capturedAt": "2026-11-07T15:17:03.472Z",
+      "view": "English demand radar",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "713c586dee7f9030615ff0fb5a50c3f3dfcbf27bcf5838cc4e71790e1d97ad4c",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    },
+    {
+      "file": "cadmea-projects.jpg",
+      "url": "https://cadmeamap.com/projektai",
+      "capturedAt": "2026-11-07T15:17:15.202Z",
+      "view": "English planned facilities",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "049c3c6fd0a506b8e4b20f4112965fae92972fcef315cb43d858486048ab169c",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    },
+    {
+      "file": "cadmea-mini-infrastructure.jpg",
+      "url": "https://cadmeamap.com/mini-infrastruktura",
+      "capturedAt": "2026-11-07T15:17:47.314Z",
+      "view": "English OSM infrastructure with cached snapshot",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "04374c9ccf47f63a571523ac0e600465fe90f01a6937dae6fafa74ca0b4f1f0f",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    },
+    {
+      "file": "cadmea-category-filter.jpg",
+      "url": "https://cadmeamap.com/mini-infrastruktura",
+      "capturedAt": "2026-11-07T15:18:23.848Z",
+      "view": "Clothing filter, 141 of 2036 cached OSM points",
+      "viewport": {
+        "width": 1348,
+        "height": 926
+      },
+      "sha256": "f6bb86a9dbbe90abb817a76c2b7cdc59490eef77be0c7c57fd69dc54694cd47f",
+      "captureMethod": "Browser viewport screenshot; JPEG bytes retained unchanged",
+      "dataContext": "Public planning interface; OSM snapshot where labeled",
+      "language": "English"
+    }
+  ]
+}

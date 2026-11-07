@@ -1,6 +1,12 @@
 # Demonstrations and original visual evidence
 
-## Now visible publicly
+## Current public walkthrough
+
+The [November 7 product walkthrough](PRODUCT_WALKTHROUGH.md) adds six direct screenshots from the working public application, captured with English selected. It covers the overview, facility portfolio, demand radar, project map, OSM snapshot and category filtering. These captures document current product behavior and preserve the team's frontend credit.
+
+[Timestamps, URLs and unchanged image hashes](../assets/live-screenshots/2026-11-07/CAPTURE_INFO.json) · [Current public verification](REVIEW_CHECKS.md)
+
+## Earlier public captures
 
 Four **actual screenshots of the live anonymous CADMEA product**, captured from the project website on November 2, 2026:
 
